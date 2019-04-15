@@ -11,12 +11,12 @@ public class OpenWeatherMapApiClient {
     @Autowired
     private RestTemplate restTemplate;
 
-    private String requestUrl = "https://api.openweathermap.org/data/2.5/weather?q={cityName}&appid=76c78dc32e3058545c3cfbee13d44e6e";
+    private String requestUrl = "https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/hide%20on%20bush?api_key=RGAPI-f8762269-9135-4219-922c-ba67c9d11f48";
 
-    public CurrentWeather getCurrentWeather(String cityName)   //도시이름을 받아야됨
+    public CurrentWeather getSummonerInfo(String summonerName)
     {
         //웹서버로부터 response가 들어오게 하는 함수
-        return restTemplate.exchange(requestUrl, HttpMethod.GET, null, CurrentWeather.class, cityName)
+        return restTemplate.exchange(requestUrl, HttpMethod.GET, null, CurrentWeather.class, summonerName)
             .getBody();
     }
 

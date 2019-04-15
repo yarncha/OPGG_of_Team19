@@ -13,4 +13,6 @@ public class RiotCrawlerApplicationTests {
 	public void contextLoads() {
 	}
 
+	//테스트
+
 }
