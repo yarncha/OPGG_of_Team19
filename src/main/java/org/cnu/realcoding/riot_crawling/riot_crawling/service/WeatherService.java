@@ -35,7 +35,7 @@ public class WeatherService {
         String target = queue.pop();
         queue.add(target);
 
-        CurrentWeather currentWeather = openWeatherMapApiClient.getCurrentWeather(target);
+        CurrentWeather currentWeather = openWeatherMapApiClient.getSummonerInfo(target);
         currentWeatherRepository.insertCurrentWeather(currentWeather);
 
     }
