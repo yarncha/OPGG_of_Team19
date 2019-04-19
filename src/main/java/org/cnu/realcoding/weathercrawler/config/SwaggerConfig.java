@@ -1,4 +1,4 @@
-package org.cnu.realcoding.riot_crawling.riot_crawling.config;
+package org.cnu.realcoding.weathercrawler.config;
 
 import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;

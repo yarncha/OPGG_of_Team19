@@ -1,4 +1,4 @@
-package org.cnu.realcoding.riot_crawling.riot_crawling;
+package org.cnu.realcoding.weathercrawler;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

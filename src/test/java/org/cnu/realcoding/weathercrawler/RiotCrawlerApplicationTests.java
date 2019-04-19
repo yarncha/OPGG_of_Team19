@@ -1,4 +1,4 @@
-package org.cnu.realcoding.riot_crawling.riot_crawling;
+package org.cnu.realcoding.weathercrawler;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -12,7 +12,5 @@ public class RiotCrawlerApplicationTests {
 	@Test
 	public void contextLoads() {
 	}
-
-	//테스트
 
 }
