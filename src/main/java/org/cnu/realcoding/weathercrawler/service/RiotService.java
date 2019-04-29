@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -42,14 +43,14 @@ public class RiotService {
         String target = queue.pop();
         queue.add(target);
 
-        System.out.println(target);
+        //System.out.println(target);
 
         CurrentSummoner currentSummoner = openRiotMapApiClient.getCurrentName(target);
-        System.out.println(currentSummoner.getId());
+        //System.out.println(currentSummoner.getId());
         String get_id=currentSummoner.getId();
 
         List<CurrentRiot> currentRiot = openRiotMapApiClient.getCurrentRiot(get_id);
-        List<CurrentRiot> insertedCurrentRiot = currentRiotRepository.insertCurrentRiot(currentRiot);
+        Collection<CurrentRiot> insertedCurrentRiot = currentRiotRepository.insertCurrentRiot(currentRiot);
 
         log.info("CurrentRiot has inserted successfully. CurrentRiot : {}", insertedCurrentRiot);
     }

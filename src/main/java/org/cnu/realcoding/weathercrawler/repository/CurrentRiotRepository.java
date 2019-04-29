@@ -8,6 +8,7 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
 
+import java.util.Collection;
 import java.util.List;
 
 @Repository
@@ -15,8 +16,11 @@ public class CurrentRiotRepository {
     @Autowired
     private MongoTemplate mongoTemplate;
 
-    public List<CurrentRiot> insertCurrentRiot(List<CurrentRiot> currentRiot) {
-        return mongoTemplate.insert(currentRiot);
+    public Collection<CurrentRiot> insertCurrentRiot(List<CurrentRiot> currentRiot) {
+        //System.out.println("repo in "+currentRiot);
+        Collection<CurrentRiot> currentRiots = mongoTemplate.insertAll(currentRiot);
+        return currentRiots;
+//        return mongoTemplate.insert(currentRiot);
     }
 
     public CurrentRiot findRecentCurrentRiotBySummoner(String cityName) {
