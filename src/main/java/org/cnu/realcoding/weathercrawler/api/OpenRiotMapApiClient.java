@@ -16,9 +16,9 @@ public class OpenRiotMapApiClient {
     private RestTemplate restTemplate;
     private final ParameterizedTypeReference<List<CurrentRiot>> responseType = new ParameterizedTypeReference<List<CurrentRiot>>() {};
 
-    private String apiKey = "RGAPI-1278f60b-3252-46e3-bab2-2b0219f38212";
+    private String apiKey = "RGAPI-3884a546-8dc5-4284-a3bc-8d09ede119ca";
     private String requestUrlOfName = "https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/{summonerName}?api_key={apiKey}";
-    private String requestUrlOfRiot = "https://kr.api.riotgames.com/lol/league/v4/positions/by-summoner/[encryptedSummonerId]?api_key={apiKey}";
+    private String requestUrlOfRiot = "https://kr.api.riotgames.com/lol/league/v4/positions/by-summoner/{encryptedSummonerId}?api_key={apiKey}";
 
     public List<CurrentRiot> getCurrentRiot(String summonerName) {
         List<CurrentRiot> currentRiotList = restTemplate.exchange(requestUrlOfRiot, HttpMethod.GET, null, responseType, summonerName, apiKey).getBody();
